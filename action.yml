@@ -1,0 +1,23 @@
+---
+name: fish-actions/fisher
+
+description: Install Fisher and other Fish plugins
+
+branding:
+  icon: download
+  color: blue
+
+inputs:
+  plugins:
+    description: "Plugins to install"
+    required: false
+
+runs:
+  using: composite
+
+  steps:
+    - run: >
+        fish --command="curl
+        https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish |
+        source && fisher install jorgebucaran/fisher $INPUT_PLUGINS"
+      shell: bash
