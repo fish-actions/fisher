@@ -19,5 +19,5 @@ runs:
     - run: >
         fish --command="curl
         https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish |
-        source && fisher install jorgebucaran/fisher $INPUT_PLUGINS"
+        source && fisher install jorgebucaran/fisher ${{ inputs.plugins }}"
       shell: bash
